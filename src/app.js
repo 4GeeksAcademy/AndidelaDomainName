@@ -5,7 +5,7 @@ import "./style.css";
 import "./assets/img/rigo-baby.jpg";
 import "./assets/img/4geeks.ico";
 
-window.onload = function() {
+/* window.onload = function() {
   let pronoun = ["the", "our", "his"];
   let adj = ["great", "big", "amazing"];
   let noun = ["jogger", "racoon", "dog", "merchant", "driver"];
@@ -17,4 +17,16 @@ window.onload = function() {
       }
     }
   }
+}; */
+// refactoring abajo
+window.onload = function() {
+  const pronoun = ["the", "our", "his"];
+  const adj = ["great", "big", "amazing"];
+  const noun = ["jogger", "racoon", "dog", "merchant", "driver"];
+
+  const domainNames = pronoun.flatMap(p =>
+    adj.flatMap(a => noun.map(n => `${p}${a}${n}.com`))
+  );
+
+  domainNames.forEach(name => console.log(name));
 };
